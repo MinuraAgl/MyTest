@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "fae46668-e8d8-4e30-a0e9-6745bc8bb0dc",
+    "name": "NewTest",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test_users_subsType",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "4517cabd-50f1-4e60-830a-5b06ef9e4c5e",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.jsonBody();\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test array\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.length).to.eql(12);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test batman wallet owner\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].title).to.eql(\"batman wallet\");\r",
+              "    pm.expect(jsonData[0].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test second batman's wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[1].title).to.eql(\"second batman's wallet\");\r",
+              "    pm.expect(jsonData[1].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test third test wallet3\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[2].title).to.eql(\"third test wallet3\");\r",
+              "    pm.expect(jsonData[2].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test Forth wallet1\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[3].title).to.eql(\"Forth wallet1\");\r",
+              "    pm.expect(jsonData[3].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test Fifth\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[4].title).to.eql(\"Fifth\");\r",
+              "    pm.expect(jsonData[4].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test Sixth\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[5].title).to.eql(\"Sixth\");\r",
+              "    pm.expect(jsonData[5].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test Seventh wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[6].title).to.eql(\"Seventh wallet\");\r",
+              "    pm.expect(jsonData[6].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test Eighth wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[7].title).to.eql(\"Eighth wallet\");\r",
+              "    pm.expect(jsonData[7].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test Storage 1\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[8].title).to.eql(\"Storage 1\");\r",
+              "    pm.expect(jsonData[8].subsType).to.eql(\"OWNER\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test sups second wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[9].title).to.eql(\"sups second wallet\");\r",
+              "    pm.expect(jsonData[9].subsType).to.eql(\"ADMIN\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test sups second wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[10].title).to.eql(\"sups second wallet\");\r",
+              "    pm.expect(jsonData[10].subsType).to.eql(\"ADMIN\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Test sups third wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[11].title).to.eql(\"sups third wallet\");\r",
+              "    pm.expect(jsonData[11].subsType).to.eql(\"USER\");\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "623be365-656a-44d8-b654-7df8cc207cde",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://45.33.71.199:31000/user/subscriptions?uuid=06e2097f-d5b9-407e-aec8-cc2f335708cb",
+          "protocol": "http",
+          "host": [
+            "45",
+            "33",
+            "71",
+            "199"
+          ],
+          "port": "31000",
+          "path": [
+            "user",
+            "subscriptions"
+          ],
+          "query": [
+            {
+              "key": "uuid",
+              "value": "06e2097f-d5b9-407e-aec8-cc2f335708cb"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "id": "480bf9cc-7c29-47d9-b060-e7e204a9f731",
+      "key": "title",
+      "value": ""
+    },
+    {
+      "id": "e4fc3771-4239-466b-9393-4463996492f6",
+      "key": "subsType",
+      "value": ""
+    }
+  ]
+}
