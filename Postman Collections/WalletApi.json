@@ -135,26 +135,93 @@
     },
     {
       "name": "create",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "37984a38-ee8b-43c2-9f5c-cd35d0fbb42b",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "pm.test(\"Test description\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.length).to.eql(6);\r",
+              "});\r",
+              "pm.test(\"Test record 1 in the batman wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].title).to.eql(\"record 1 in the batman wallet\");\r",
+              "});\r",
+              "pm.test(\"Test Second2\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[1].title).to.eql(\"Second2\");\r",
+              "});\r",
+              "pm.test(\"Test Third\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[2].title).to.eql(\"Third\");\r",
+              "});\r",
+              "pm.test(\"Test Forth\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[3].title).to.eql(\"Forth\");\r",
+              "});\r",
+              "pm.test(\"Test Fifth\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[4].title).to.eql(\"Fifth\");\r",
+              "});\r",
+              "pm.test(\"Test Seventh\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[5].title).to.eql(\"Seventh\");\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "id": "286c2df3-fd46-4212-aa24-60eaee335f70",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
       "request": {
-        "method": "GET",
+        "method": "POST",
         "header": [],
-        "url": null
+        "body": {
+          "mode": "raw",
+          "raw": "06e2097f-d5b9-407e-aec8-cc2f335708cb"
+        },
+        "url": {
+          "raw": "http://45.33.71.199:31000/wallet/recordsOfWallet?walletUuid=da09f43e-3e68-49c9-a971-149dadf8c750",
+          "protocol": "http",
+          "host": [
+            "45",
+            "33",
+            "71",
+            "199"
+          ],
+          "port": "31000",
+          "path": [
+            "wallet",
+            "recordsOfWallet"
+          ],
+          "query": [
+            {
+              "key": "walletUuid",
+              "value": "da09f43e-3e68-49c9-a971-149dadf8c750"
+            }
+          ]
+        }
       },
       "response": []
     }
   ],
   "variable": [
     {
-      "id": "aec52634-9d6d-4752-8a49-861ac46ef870",
+      "id": "bb5e877d-19d5-4649-91d0-d5cefbbd9091",
       "key": "title",
       "value": ""
     },
     {
-      "id": "8ca9df7b-ffbe-4165-a79d-67315f20a729",
+      "id": "c8e6acf4-5931-4a02-a003-1e1d5fa866a5",
       "key": "subsType",
       "value": ""
     }
