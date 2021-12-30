@@ -134,7 +134,7 @@
       "response": []
     },
     {
-      "name": "New Request",
+      "name": "create",
       "id": "286c2df3-fd46-4212-aa24-60eaee335f70",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
@@ -149,12 +149,12 @@
   ],
   "variable": [
     {
-      "id": "92545fce-c21a-4b8c-965a-712fa3de1963",
+      "id": "aec52634-9d6d-4752-8a49-861ac46ef870",
       "key": "title",
       "value": ""
     },
     {
-      "id": "d5e954b5-1e01-440c-a4ee-345b6d7bee59",
+      "id": "8ca9df7b-ffbe-4165-a79d-67315f20a729",
       "key": "subsType",
       "value": ""
     }
