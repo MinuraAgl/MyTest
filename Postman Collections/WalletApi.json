@@ -132,16 +132,29 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "286c2df3-fd46-4212-aa24-60eaee335f70",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
     }
   ],
   "variable": [
     {
-      "id": "480bf9cc-7c29-47d9-b060-e7e204a9f731",
+      "id": "803af6fd-3009-45fb-b8d2-5492b1ac9c31",
       "key": "title",
       "value": ""
     },
     {
-      "id": "e4fc3771-4239-466b-9393-4463996492f6",
+      "id": "55b283bd-285f-4a32-8aac-16ca8ba1fc25",
       "key": "subsType",
       "value": ""
     }
