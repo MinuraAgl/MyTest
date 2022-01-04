@@ -212,16 +212,29 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "f7aaa890-7779-4a0a-b0a6-5cc4116dbea7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
     }
   ],
   "variable": [
     {
-      "id": "31015878-0b28-4d92-8461-1f02e453f93d",
+      "id": "25070d5b-bf7a-4ded-a95a-a8366c6dc9b8",
       "key": "title",
       "value": ""
     },
     {
-      "id": "3ce50231-c1c0-4723-bf9d-65f1998722f9",
+      "id": "34d2147f-881c-472b-ad4a-6f493172441b",
       "key": "subsType",
       "value": ""
     }
