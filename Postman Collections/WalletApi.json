@@ -215,6 +215,56 @@
     },
     {
       "name": "users_subscriptions_schema_checking",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "3c08bc24-77ce-4ccc-bd8e-cad3fcc33b94",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "\r",
+              "const schema = {       \r",
+              "    \"type\": \"array\",\r",
+              "    \"items\": [{\r",
+              "        \"type\": \"object\",\r",
+              "        \"required\": [\"uuid\", \"title\", \"description\", \"id\"],\r",
+              "        \"properties\":{\r",
+              "         \"uuid\": {\r",
+              "            \"type\":\"string\"\r",
+              "             },\r",
+              "         \"id\": {\r",
+              "            \"type\": \"object\",\r",
+              "            \"required\": [\"timestamp\", \"date\"],\r",
+              "            \"properties\": {\r",
+              "                \"timestamp\": { \"type\": \"number\" },\r",
+              "                \"date\": { \"type\": \"string\"}\r",
+              "            }},\r",
+              "         \"title\": {\r",
+              "             \"type\":\"string\"\r",
+              "             },\r",
+              "         \"description\": {\r",
+              "             \"type\":\"string\"\r",
+              "            }\r",
+              "        }\r",
+              "    }]\r",
+              "};\r",
+              "\r",
+              "pm.test(\"Validate schema\", () => {\r",
+              "    pm.response.to.have.jsonSchema(schema);\r",
+              "});\r",
+              "\r",
+              "\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "id": "f7aaa890-7779-4a0a-b0a6-5cc4116dbea7",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
@@ -222,19 +272,39 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": null
+        "url": {
+          "raw": "http://45.33.71.199:31000/user/subscriptions?uuid=06e2097f-d5b9-407e-aec8-cc2f335708cb",
+          "protocol": "http",
+          "host": [
+            "45",
+            "33",
+            "71",
+            "199"
+          ],
+          "port": "31000",
+          "path": [
+            "user",
+            "subscriptions"
+          ],
+          "query": [
+            {
+              "key": "uuid",
+              "value": "06e2097f-d5b9-407e-aec8-cc2f335708cb"
+            }
+          ]
+        }
       },
       "response": []
     }
   ],
   "variable": [
     {
-      "id": "c1ccc4fe-df8d-4136-a620-22434d040bf9",
+      "id": "a82ebe9e-c7fb-4e62-b379-77d7607a161a",
       "key": "title",
       "value": ""
     },
     {
-      "id": "20a5b0b7-75e0-49a4-a941-800c2712643c",
+      "id": "0873cb2e-c508-4c5e-82bb-1f4d7bd9064d",
       "key": "subsType",
       "value": ""
     }
