@@ -214,7 +214,7 @@
       "response": []
     },
     {
-      "name": "Create Copy",
+      "name": "Create_chek",
       "event": [
         {
           "listen": "test",
@@ -379,12 +379,12 @@
   ],
   "variable": [
     {
-      "id": "e629f507-b915-4f7c-8aed-8dcc8101bec9",
+      "id": "8c8afe36-816d-443a-849d-5ffac75f02d4",
       "key": "title",
       "value": ""
     },
     {
-      "id": "5b9a4f63-e979-4e23-adc6-63c7ae42ba1f",
+      "id": "aa5bc73b-7b76-423a-93af-e31241a78b09",
       "key": "subsType",
       "value": ""
     }
