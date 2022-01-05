@@ -214,7 +214,7 @@
       "response": []
     },
     {
-      "name": "Create_chek",
+      "name": "Create_check_schema",
       "event": [
         {
           "listen": "test",
@@ -379,12 +379,12 @@
   ],
   "variable": [
     {
-      "id": "8c8afe36-816d-443a-849d-5ffac75f02d4",
+      "id": "19251c52-257e-4293-8fa3-369e20b47c2b",
       "key": "title",
       "value": ""
     },
     {
-      "id": "aa5bc73b-7b76-423a-93af-e31241a78b09",
+      "id": "f525b7d4-b167-48d8-a690-e7130bf5bc9f",
       "key": "subsType",
       "value": ""
     }
