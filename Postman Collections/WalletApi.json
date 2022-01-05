@@ -295,16 +295,96 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Create Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "6fb97e86-da9e-4d03-a5bd-e4f84361f744",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "pm.test(\"Test description\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.length).to.eql(6);\r",
+              "});\r",
+              "pm.test(\"Test record 1 in the batman wallet\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].title).to.eql(\"record 1 in the batman wallet\");\r",
+              "});\r",
+              "pm.test(\"Test Second2\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[1].title).to.eql(\"Second2\");\r",
+              "});\r",
+              "pm.test(\"Test Third\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[2].title).to.eql(\"Third\");\r",
+              "});\r",
+              "pm.test(\"Test Forth\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[3].title).to.eql(\"Forth\");\r",
+              "});\r",
+              "pm.test(\"Test Fifth\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[4].title).to.eql(\"Fifth\");\r",
+              "});\r",
+              "pm.test(\"Test Seventh\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[5].title).to.eql(\"Seventh\");\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "72dfc997-4551-42e1-9198-de7af87955bb",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "06e2097f-d5b9-407e-aec8-cc2f335708cb"
+        },
+        "url": {
+          "raw": "http://45.33.71.199:31000/wallet/recordsOfWallet?walletUuid=da09f43e-3e68-49c9-a971-149dadf8c750",
+          "protocol": "http",
+          "host": [
+            "45",
+            "33",
+            "71",
+            "199"
+          ],
+          "port": "31000",
+          "path": [
+            "wallet",
+            "recordsOfWallet"
+          ],
+          "query": [
+            {
+              "key": "walletUuid",
+              "value": "da09f43e-3e68-49c9-a971-149dadf8c750"
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
     {
-      "id": "a82ebe9e-c7fb-4e62-b379-77d7607a161a",
+      "id": "1af39ae1-015c-4669-bca2-9c7a5e15fa9c",
       "key": "title",
       "value": ""
     },
     {
-      "id": "0873cb2e-c508-4c5e-82bb-1f4d7bd9064d",
+      "id": "e55d1518-4089-4d55-af9e-2878a4de379f",
       "key": "subsType",
       "value": ""
     }
