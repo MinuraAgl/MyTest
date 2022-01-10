@@ -311,7 +311,7 @@
         {
           "listen": "test",
           "script": {
-            "id": "3c08bc24-77ce-4ccc-bd8e-cad3fcc33b94",
+            "id": "e783a884-9939-4dca-9fdd-0abb64d7f862",
             "exec": [
               "pm.test(\"Status code is 200\", function () {\r",
               "    pm.response.to.have.status(200);\r",
@@ -391,12 +391,12 @@
   ],
   "variable": [
     {
-      "id": "4287c0a3-0850-4680-804f-b293474f3c46",
+      "id": "fe39edd8-5dec-4079-bbea-dad3cfc2e9ed",
       "key": "title",
       "value": ""
     },
     {
-      "id": "4423075b-2669-4591-999d-2b07985ee8e4",
+      "id": "144a52ab-2582-4ee0-bc70-c85fd9ff7915",
       "key": "subsType",
       "value": ""
     }
