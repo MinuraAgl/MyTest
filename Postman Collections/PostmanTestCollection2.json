@@ -1,0 +1,439 @@
+{
+  "info": {
+    "_postman_id": "958747b7-edb3-46b5-aec4-10b6bc81759d",
+    "name": "Test Collectiom_1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get",
+      "item": [
+        {
+          "name": "list_users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "67b7ee05-326d-42b7-b52d-05843e2fd22a",
+                "exec": [
+                  "pm.test(\"Verify that status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Response body matches correct string\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"Michael\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Correct page\", function () {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.page).to.eql(2);\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "3ed3cc83-e982-4280-b8f5-157aa616b165",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://reqres.in/api/users?page=2",
+              "protocol": "https",
+              "host": [
+                "reqres",
+                "in"
+              ],
+              "path": [
+                "api",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user_not_found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "86f5bd9b-d29c-4bdd-8784-c40d8529b59e",
+                "exec": [
+                  "pm.test(\"Verify that Code is 404\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Verify that response = Empty list\", function () {\r",
+                  "    pm.response.to.have.body({});\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "f2c2aa07-4c7b-49b0-8668-5126d67cb257",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "https://reqres.in/api/users/23"
+          },
+          "response": []
+        },
+        {
+          "name": "single_user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e706b172-d9c2-4985-abaa-3ff38f9b6147",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Correct first_name user 2\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"Janet\");\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "188a90fb-7863-4e9b-80a6-5eeee1302838",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "https://reqres.in/api/users/2"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "d237ee73-cd17-46da-8685-01395e8a022f"
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "registration_with_corretc_data",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "97871789-5c66-41b8-bcb7-01c575a76541",
+                "exec": [
+                  "pm.test(\"Verify that Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Response Body is correct\", function () {\r",
+                  "    pm.response.to.have.body(\r",
+                  "    {\r",
+                  "        \"id\": 4,\r",
+                  "        \"token\": \"QpwL5tke4Pnpja7X4\"\r",
+                  "    })\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "91a9b5e8-e1dc-4bb1-875a-351b04c33c54",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://reqres.in/api/register"
+          },
+          "response": []
+        },
+        {
+          "name": "create_new_user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6c65f9de-8937-4bc6-ac1e-17ed2635f591",
+                "exec": [
+                  "pm.test(\"Verify that code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"successfully create new user\", function () {\r",
+                  "    pm.collectionVariables.set(\"name\", \"morpheus\")\r",
+                  "    \r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "af99e676-a8ff-453e-8f9f-4b2e6458b136",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://reqres.in/api/users"
+          },
+          "response": []
+        },
+        {
+          "name": "invalid_email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "48a4e145-fc34-4aa9-96c1-8c636bbeac9c",
+                "exec": [
+                  "pm.test(\"Verify that Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response Body is correct\", function () {\r",
+                  "    pm.response.to.have.body(\r",
+                  "        {\r",
+                  "            \"error\": \"Missing password\"\r",
+                  "        }\r",
+                  "\r",
+                  "    )\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "0e0dd8f7-772d-48c6-944f-9c42efd2e41b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"sydney@fife\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://reqres.in/api/register"
+          },
+          "response": []
+        },
+        {
+          "name": "correct_login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8d5ad2d3-c999-4822-bb32-0ab5b0fb6ec3",
+                "exec": [
+                  "pm.test(\"Verify that Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Verify that Login is correct\", function () {\r",
+                  "    pm.response.to.have.body(\r",
+                  "        {\r",
+                  "            \"token\": \"QpwL5tke4Pnpja7X4\"\r",
+                  "        }\r",
+                  "\r",
+                  "    )\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "c7240d2f-4ce0-4bf3-b5c4-0dc389b8b952",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"cityslicka\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://reqres.in/api/login"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "55c2e4c5-98ea-4195-8705-9e6f1bc3b764"
+    },
+    {
+      "name": "Put",
+      "item": [
+        {
+          "name": "update_user_job",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "368e506c-c53e-4898-a2fd-bb3e64999bc4",
+                "exec": [
+                  "pm.test(\"Verify that Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"User job correct change\", function () {\r",
+                  "    pm.collectionVariables.set(\"job\", \"zion resident\")\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "35209b34-ec31-486c-89a8-557517fde3bc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://reqres.in/api/users/2"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "cc6783df-4a35-4818-8c66-58cc11345bd8"
+    },
+    {
+      "name": "Delete",
+      "item": [
+        {
+          "name": "delete_user_2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ba06361a-4176-405a-8049-356a48736fbd",
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"\");\r",
+                  "});\r",
+                  "pm.test(\"User correct remova\", function () {\r",
+                  "    pm.response.to.have.body(\"\");\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "afe59624-5d2d-4c63-948c-8c0455e564e4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "https://reqres.in/api/users/2"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "f1e03b07-867d-4625-9103-be385b6c92b2"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "7310982e-6fde-4e01-b4c2-3c27f1dee573",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "7ad872fd-1d58-4532-bd74-16d023b0abc2",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "619427bf-a7e4-462c-998d-85fc2771965d",
+      "key": "job",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
